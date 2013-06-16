@@ -2,7 +2,7 @@
 
 // redirect "http://google.com"
 
-class goto implements keywords{
+class redirect implements keywords{
   private $error = NULL;		// we will store errors here
 
 	public function error(){	// this will be called when some error is found
