@@ -1,0 +1,25 @@
+<?php
+class def implements keywords { // define a new variable
+    private $error = NULL;    // we will store errors here
+    
+    $user_var = [];
+
+    public function error() {  // this will be called when some error is found
+        return $this -> error;
+    }
+
+    public function syntax($string) {
+        if(empty($string)) {  // too few arguments
+             $this -> error .= "Syntax error: too few arguments. \"def\" requires additional arguments.";
+            return false;
+        }
+        return true;
+    }
+    public function run($string) {
+        $arg1 = htmlentities($string[1]);
+        unset($string[1]);
+        $string = htmlentities(implode($string));
+        $user_var[] = array($arg1=>$string);
+    }
+}
+?>
